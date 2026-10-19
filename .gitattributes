@@ -1,0 +1,12 @@
+# LabVIEW graphical source is binary. Git must not text-merge these files.
+# If two people edit the same VI, Git will mark a conflict instead of
+# producing a corrupted half-merged file.
+*.vi binary
+*.vit binary
+*.ctl binary
+*.ctt binary
+*.lvclass binary
+*.lvlib binary
+*.xctl binary
+*.llb binary
+*.mnu binary

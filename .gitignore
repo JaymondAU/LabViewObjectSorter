@@ -1,0 +1,26 @@
+# LabVIEW saves these per computer. Committing them causes false changes
+# even when nobody edited a VI.
+*.aliases
+*.ali
+*.lvlps
+
+# Rewritten every time ObjectSorter.lvproj is opened.
+labview/ObjectSorter/.ObjectSorter.UserState/
+
+# LabVIEW backup copies
+*.bak
+*.vi.bak
+*.ctl.bak
+*.lvlib.bak
+*.lvclass.bak
+*.llb.bak
+*.lvproj.bak
+
+# OS junk
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Local assessment copies. They include student IDs, so keep them off GitHub.
+Project_Scope_Mechatronics_Object_Sorting.pdf
+Group20ObjectSorterProjectBrief.pdf
