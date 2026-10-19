@@ -90,4 +90,4 @@ Do not open the conflicted `.vi` in a text editor. Tell the group. Keep one pers
 
 ## What not to commit
 
-`.aliases`, `.ali`, and `.lvlps` are local LabVIEW settings and are already ignored. `labview/ObjectSorter/.ObjectSorter.UserState/` is also ignored: LabVIEW rewrites it every time the project is opened, and `git add labview` will skip it. The unit scope and project brief stay on your own machines; they are not in this repository.
+`.aliases`, `.ali`, and `.lvlps` are local LabVIEW settings and are already ignored. So are the user-state folders LabVIEW writes beside each project: `labview/ObjectSorter/.ObjectSorter.UserState/` and `labview/RemoteClient/.RemoteClient.UserState/`. LabVIEW rewrites those every time a project is opened, and `git add labview` will skip them. The unit scope and project brief stay on your own machines; they are not in this repository.

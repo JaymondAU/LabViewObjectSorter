@@ -4,8 +4,9 @@
 *.ali
 *.lvlps
 
-# Rewritten every time ObjectSorter.lvproj is opened.
-labview/ObjectSorter/.ObjectSorter.UserState/
+# Rewritten every time a project is opened. One folder per .lvproj,
+# named .<ProjectName>.UserState next to that project.
+.*.UserState/
 
 # LabVIEW backup copies
 *.bak
