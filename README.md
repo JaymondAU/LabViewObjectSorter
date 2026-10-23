@@ -1,10 +1,10 @@
-# Group 20 — Automated Object Sorting System
+# Group 20 - Automated Object Sorting System
 
 LabVIEW-controlled sorting cell for ENG20010 (Robotics & Mechatronics). Cubes leave a funnel onto an inclined conveyor, get classified at the bottom of the belt, then fall onto a servo-pivoted slide that routes them by colour or to Reject.
 
 Repository: https://github.com/JaymondAU/LabViewObjectSorter
 
-Demo target: mixed batch, at most 10 s per object, at least 90% correct binning under controlled lighting, with a TCP/IP remote start/stop/mode client.
+Demo target: mixed batch, at most 10 seconds per object, at least 90% correct binning under controlled lighting, with a TCP/IP remote start/stop/mode client.
 
 ## Cell
 
@@ -56,9 +56,9 @@ Two projects are already in the repository. Open the one that matches the machin
 | Person | Role | Folder | VIs |
 | --- | --- | --- | --- |
 | Nathan Do | LabVIEW core | `labview/ObjectSorter/StateMachine/` and `Typedefs/` | State machine: `Main_State_Machine.vi`, `Globals.vi`. Typedefs: `System_State.ctl`, `Motor_Command.ctl`, `ServoCommand.ctl` |
-| Taigue Mitchell | Vision | `labview/ObjectSorter/Vision/` | `camera system.vi` |
+| Taigue Mitchell | Vision Handling | `labview/ObjectSorter/Vision/` | `camera system.vi` |
 | Jasper Van Eijk | DAQ and actuation | `labview/ObjectSorter/DAQ/` | `QueryIR.vi`, `MotorController.vi`, `ServoController.vi` |
-| Taha Mohamed Shaik | SCADA, logging, network | `labview/ObjectSorter/SCADA/`, `Network/`, and `labview/RemoteClient/` | Not in the repo yet: `Update_Dashboard.vi`, `Log_Production.vi`, `TCP_Publish_Status.vi`, `TCP_Listen_Commands.vi`, `Remote_Client.vi` |
+| Taha Mohamed Shaik | SCADA, logging, TCP networking | `labview/ObjectSorter/SCADA/`, `Network/`, and `labview/RemoteClient/` | Not in the repo yet: `Update_Dashboard.vi`, `Log_Production.vi`, `TCP_Publish_Status.vi`, `TCP_Listen_Commands.vi`, `Remote_Client.vi` |
 | Jaymond Martin | Group lead | `N/A` | `N/A` |
 
 Nathan wires the sub-VIs into the state machine. Call into someone else's VI; do not edit their diagram. If a connector pane must change, agree in chat first, because every caller breaks until it is updated.
