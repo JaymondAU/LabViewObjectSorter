@@ -1,10 +1,14 @@
 # Group 20 — Automated Object Sorting System
 
-LabVIEW-controlled sorting cell for ENG20010 (Robotics & Mechatronics). Uniform RGB cubes get funneled onto a singulating conveyor belt, an IR sensor detects them, a USB camera classifies colour, size, and shape, and an SG90 servo diverter sorts each object by colour or rejects them.
+LabVIEW-controlled sorting cell for ENG20010 (Robotics & Mechatronics). Cubes leave a funnel onto an inclined conveyor, get classified at the bottom of the belt, then fall onto a servo-pivoted slide that routes them by colour or to Reject.
 
 Repository: https://github.com/JaymondAU/LabViewObjectSorter
 
 Demo target: mixed batch, at most 10 s per object, at least 90% correct binning under controlled lighting, with a TCP/IP remote start/stop/mode client.
+
+## Cell
+
+Cubes sit in a funnel that feeds an inclined conveyor. Dividers on the belt overlap the funnel outlet, so each divider agitates the outlet and lets one object onto the belt. The IR sensor and USB camera sit at the bottom of the conveyor. Classification happens there, while the object is still on the belt. The conveyor then advances and the object falls off the end onto a slide. An SG90 pivots that slide to the Red, Green, Blue, or Reject bin.
 
 ## How to get the code
 
@@ -49,12 +53,12 @@ Two projects are already in the repository. Open the one that matches the machin
 
 `.vi` files are binary. Git can keep history and roll back, but it cannot merge two edits of the same VI. Stay inside your folder.
 
-| Person | Role | Folder | Planned VIs |
+| Person | Role | Folder | VIs |
 | --- | --- | --- | --- |
-| Nathan Do | LabVIEW core | `labview/ObjectSorter/StateMachine/` and `Typedefs/` | `Main_State_Machine.vi`, `System_State.ctl`, `Object_Class.ctl` |
-| Taigue Mitchell | Vision | `labview/ObjectSorter/Vision/` | `Acquire_Frame.vi`, `Classify_Colour_HSV.vi`, `Measure_Size.vi`, `Measure_Shape.vi`, `Classify_Object.vi` |
-| Jasper Van Eijk | DAQ and actuation | `labview/ObjectSorter/DAQ/` | `Read_IR_Presence.vi`, `Set_Servo_Position.vi` |
-| Taha Mohamed Shaik | SCADA, logging, network | `labview/ObjectSorter/SCADA/`, `Network/`, and `labview/RemoteClient/` | `Update_Dashboard.vi`, `Log_Production.vi`, `TCP_Publish_Status.vi`, `TCP_Listen_Commands.vi`, `Remote_Client.vi` |
+| Nathan Do | LabVIEW core | `labview/ObjectSorter/StateMachine/` and `Typedefs/` | State machine: `Main_State_Machine.vi`, `Globals.vi`. Typedefs: `System_State.ctl`, `Motor_Command.ctl`, `ServoCommand.ctl` |
+| Taigue Mitchell | Vision | `labview/ObjectSorter/Vision/` | `camera system.vi` |
+| Jasper Van Eijk | DAQ and actuation | `labview/ObjectSorter/DAQ/` | `QueryIR.vi`, `MotorController.vi`, `ServoController.vi` |
+| Taha Mohamed Shaik | SCADA, logging, network | `labview/ObjectSorter/SCADA/`, `Network/`, and `labview/RemoteClient/` | Not in the repo yet: `Update_Dashboard.vi`, `Log_Production.vi`, `TCP_Publish_Status.vi`, `TCP_Listen_Commands.vi`, `Remote_Client.vi` |
 | Jaymond Martin | Group lead | `N/A` | `N/A` |
 
 Nathan wires the sub-VIs into the state machine. Call into someone else's VI; do not edit their diagram. If a connector pane must change, agree in chat first, because every caller breaks until it is updated.
@@ -72,14 +76,14 @@ stateDiagram-v2
   Detect --> Classify: IR object present
   Classify --> Sort: HSV, size, and shape all pass
   Classify --> Reject: any check fails
-  Sort --> Confirm
-  Reject --> Confirm
+  Sort --> Confirm: slide set, conveyor advances
+  Reject --> Confirm: slide set, conveyor advances
   Confirm --> Idle: update counts and write the log
 ```
 
-- **Detect** waits for the IR sensor, then triggers a frame capture.
-- **Classify** checks HSV colour, bounding-box area, and aspect ratio. Any failed check selects Reject.
-- **Sort** and **Reject** command the matching servo setpoint.
+- **Detect** waits until the IR sensor at the bottom of the conveyor sees an object, then triggers a frame capture.
+- **Classify** checks HSV colour, bounding-box area, and aspect ratio in `camera system.vi`. Any failed check selects Reject.
+- **Sort** and **Reject** move the slide to the matching servo setpoint, then advance the conveyor so the object falls off the end onto the slide.
 - **Confirm** updates per-bin and reject counts and appends a time-stamped log line, then returns to Idle.
 
 ## If Git reports a conflict on a VI
