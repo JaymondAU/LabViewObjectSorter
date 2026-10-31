@@ -12,7 +12,9 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="Variables.vi" Type="VI" URL="../Variables/Variables.vi"/>
+		<Item Name="TCPGlobalVars.vi" Type="VI" URL="../Variables/TCPGlobalVars.vi"/>
+		<Item Name="TCPSCADA.vi" Type="VI" URL="../Variables/TCPSCADA.vi"/>
+		<Item Name="TCPSharedVariables.vi" Type="VI" URL="../Variables/TCPSharedVariables.vi"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
