@@ -8,3 +8,7 @@ Use [Shared Variables Nodes](https://www.ni.com/docs/en-US/bundle/labview/page/r
 
 For Hosting the shared variables, refer to [Deployment and Hosting](https://www.ni.com/en/support/documentation/supplemental/06/using-the-labview-shared-variable.html#Deployment%20and%20Hosting)
 
+
+# Current known errors
+- Information not being sent out to shared variable
+- https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z000000PAinSAG&l=en-AU
