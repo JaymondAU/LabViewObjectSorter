@@ -13,6 +13,22 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Item Name="RemoteClient" Type="Folder">
+			<Item Name=".RemoteClient.UserState" Type="Folder">
+				<Item Name="debug.lvprojstate" Type="Document" URL="../.RemoteClient.UserState/debug.lvprojstate"/>
+			</Item>
+			<Item Name="clientSCADA" Type="Folder">
+				<Item Name=".gitkeep" Type="Document" URL="../clientSCADA/.gitkeep"/>
+				<Item Name="SCADA.vi" Type="VI" URL="../clientSCADA/SCADA.vi"/>
+			</Item>
+			<Item Name="clientTCP" Type="Folder">
+				<Item Name=".gitkeep" Type="Document" URL="../clientTCP/.gitkeep"/>
+				<Item Name="Client.vi" Type="VI" URL="../clientTCP/Client.vi"/>
+			</Item>
+			<Item Name="Shared Variables" Type="Folder"/>
+			<Item Name="RemoteClient.aliases" Type="Document" URL="../RemoteClient.aliases"/>
+		</Item>
+		<Item Name="Global.vi" Type="VI" URL="../Variables/Global.vi"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
