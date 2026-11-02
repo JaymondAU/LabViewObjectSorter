@@ -16,10 +16,8 @@
 		<Item Name="DAQ" Type="Folder" URL="../DAQ">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="Network" Type="Folder">
-			<Item Name="LegacyServer.vi" Type="VI" URL="../Network/LegacyServer.vi"/>
-			<Item Name="SharedVariables.lvlib" Type="Library" URL="../Network/SharedVariables.lvlib"/>
-			<Item Name="TCP server.vi" Type="VI" URL="../Network/TCP server.vi"/>
+		<Item Name="Network" Type="Folder" URL="../Network">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="SCADA" Type="Folder" URL="../SCADA">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
