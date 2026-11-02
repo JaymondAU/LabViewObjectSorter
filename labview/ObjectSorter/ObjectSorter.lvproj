@@ -16,9 +16,7 @@
 		<Item Name="DAQ" Type="Folder" URL="../DAQ">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="Network" Type="Folder" URL="../Network">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
-		</Item>
+		<Item Name="Network" Type="Folder"/>
 		<Item Name="SCADA" Type="Folder" URL="../SCADA">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
