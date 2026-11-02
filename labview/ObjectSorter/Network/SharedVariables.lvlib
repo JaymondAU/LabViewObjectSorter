@@ -13,4 +13,14 @@
 		<Property Name="type" Type="Str">Network</Property>
 		<Property Name="typeDesc" Type="Bin">*A#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!#&gt;G1!!!#9!A!!!!!!#!#!!.`````]!"39!A!!!!!!"!!1!!!!"!!!!!!!!!!!!/%"Q!"U*35V"55FN97&gt;F!!%!!!F*45&amp;237VB:W5G!)!!!!!!!1!%!!!!!1!!!!!!!!6*&lt;7&amp;H:1!"!!%!!!!!!!!!#GZJ&gt;GFT=X:D,CI!!!!44&amp;:@37VB:W6%6%.M98.T37ZG&lt;Q!!!!%!!!!!!!!!!!!!!!!</Property>
 	</Item>
+	<Item Name="StringCam" Type="Variable">
+		<Property Name="featurePacks" Type="Str">Network</Property>
+		<Property Name="Industrial:AliasVariable" Type="Str"></Property>
+		<Property Name="Network:SingleWriter" Type="Str">False</Property>
+		<Property Name="Network:UseBinding" Type="Str">False</Property>
+		<Property Name="Network:UseBuffering" Type="Str">False</Property>
+		<Property Name="numTypedefs" Type="UInt">0</Property>
+		<Property Name="type" Type="Str">Network</Property>
+		<Property Name="typeDesc" Type="Bin">*A#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!!I*!!!!#9!A!!!!!!"!""!-0````]'5X2S;7ZH!!!"!!!!!!!!!!!!!!!!!!!</Property>
+	</Item>
 </Library>
