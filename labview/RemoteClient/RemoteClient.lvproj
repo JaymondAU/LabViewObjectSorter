@@ -17,18 +17,18 @@
 			<Item Name=".RemoteClient.UserState" Type="Folder">
 				<Item Name="debug.lvprojstate" Type="Document" URL="../.RemoteClient.UserState/debug.lvprojstate"/>
 			</Item>
+			<Item Name="clientCommunication" Type="Folder">
+				<Item Name="GetCameraFeed.vi" Type="VI" URL="../clientTCP/GetCameraFeed.vi"/>
+				<Item Name="TCP client.vi" Type="VI" URL="../clientTCP/TCP client.vi"/>
+			</Item>
 			<Item Name="clientSCADA" Type="Folder">
-				<Item Name=".gitkeep" Type="Document" URL="../clientSCADA/.gitkeep"/>
 				<Item Name="SCADA.vi" Type="VI" URL="../clientSCADA/SCADA.vi"/>
 			</Item>
-			<Item Name="clientTCP" Type="Folder">
-				<Item Name=".gitkeep" Type="Document" URL="../clientTCP/.gitkeep"/>
-				<Item Name="Client.vi" Type="VI" URL="../clientTCP/Client.vi"/>
+			<Item Name="Shared Variables" Type="Folder">
+				<Item Name="ComGlobalVars.vi" Type="VI" URL="../Variables/ComGlobalVars.vi"/>
 			</Item>
-			<Item Name="Shared Variables" Type="Folder"/>
 			<Item Name="RemoteClient.aliases" Type="Document" URL="../RemoteClient.aliases"/>
 		</Item>
-		<Item Name="Global.vi" Type="VI" URL="../Variables/Global.vi"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
