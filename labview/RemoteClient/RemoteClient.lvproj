@@ -13,22 +13,19 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="RemoteClient" Type="Folder">
-			<Item Name=".RemoteClient.UserState" Type="Folder">
-				<Item Name="debug.lvprojstate" Type="Document" URL="../.RemoteClient.UserState/debug.lvprojstate"/>
-			</Item>
-			<Item Name="clientCommunication" Type="Folder">
-				<Item Name="GetCameraFeed.vi" Type="VI" URL="../clientTCP/GetCameraFeed.vi"/>
-				<Item Name="TCP client.vi" Type="VI" URL="../clientTCP/TCP client.vi"/>
-			</Item>
-			<Item Name="clientSCADA" Type="Folder">
-				<Item Name="SCADA.vi" Type="VI" URL="../clientSCADA/SCADA.vi"/>
-			</Item>
-			<Item Name="Shared Variables" Type="Folder">
-				<Item Name="ComGlobalVars.vi" Type="VI" URL="../Variables/ComGlobalVars.vi"/>
-			</Item>
-			<Item Name="RemoteClient.aliases" Type="Document" URL="../RemoteClient.aliases"/>
+		<Item Name=".RemoteClient.UserState" Type="Folder" URL="../.RemoteClient.UserState">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
+		<Item Name="clientSCADA" Type="Folder" URL="../clientSCADA">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
+		<Item Name="clientTCP" Type="Folder" URL="../clientTCP">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
+		<Item Name="Variables" Type="Folder" URL="../Variables">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
+		<Item Name="RemoteClient.aliases" Type="Document" URL="../RemoteClient.aliases"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
