@@ -35,6 +35,8 @@ Make these all documented and stuff
     | AIO 0 | Motor control input 1 (OUTPUT) |
     | AIO 1 | Motor control input 2 (OUTPUT) |
     | COM | USB camera (Can be plugged into any COM port) |
+
+6. Create folder in C:\ directory named "Datalogger" and create .txt file called "Datalogger.txt"
 5. Run Application.exe
 
 # External Links
