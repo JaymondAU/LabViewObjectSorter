@@ -17,3 +17,42 @@ Make these all documented and stuff
 
 - how to run
 - project structure
+
+```
+labview\
+├── ObjectSorter\
+│   ├── DAQ\
+│   │
+│   ├── Network\
+│   │
+│   ├── SCADA\
+│   │
+│   ├── StateMachine\
+│   │
+│   ├── TypeDefs\
+│   │
+│   ├── Vision\
+│   │
+│   └── ObjectSorter.lvproj
+│
+├── RemoteClient\
+│   ├── clientSCADA\
+│   │   ├── 
+│   │
+│   ├── clientTCP\
+│   │
+│   ├── Variables\
+│   │
+│   └── RemoteClient.lvproj
+│
+├── BTTRemoteClient\
+│   ├── Variables\
+│   │   ├── TCPGlobalVars.vi
+│   │   ├── TCPSharedVariables.vi
+│   │   └── TCPSCADA.vi
+│   │
+│   ├── BetterRemoteClient.lvproj
+│   └── README.md
+│
+└── README.md           
+```
