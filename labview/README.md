@@ -15,6 +15,14 @@ Make these all documented and stuff
         - Move conveyorbelt set amount
         - move to idle
 
+$$~$$
+
+# About Project
+
+This project is the culmilitive product of Jaymond's, Jasper's, Nathan's, Taigue's and Taha's work over 13 weeks (a semester).
+
+The main two `.lvproj`s to run is in ObjectSorter and RemoteClient folders respectively
+
 # How to run
 
 1. Download repository
@@ -32,8 +40,8 @@ Make these all documented and stuff
     | DIO 2 | E stop button (INPUT) |
     | DIO 1 | Motor sleep (on motor controller, OUTPUT) |
     | DIO 0 | IR sensor signal (INPUT) |
-    | AIO 0 | Motor control input 1 (OUTPUT) |
     | AIO 1 | Motor control input 2 (OUTPUT) |
+    | AIO 0 | Motor control input 1 (OUTPUT) |
     | COM | USB camera (Can be plugged into any COM port) |
 
 5. Run Application.exe
@@ -51,23 +59,27 @@ NI Vision Acquisition Software - https://www.ni.com/en/support/downloads/drivers
 # Project Structure
 ```
 labview\
-├── ObjectSorter\
+├── ObjectSorter\                           Sorting system controller and data server
 │   ├── DAQ\
 │   │   ├── MotorController.vi              Conveyor motor behaviour
 │   │   ├── MotorTest.vi                    Tests conveyor motor
+│   │   ├── PanelController.vi              Controls the LED Panel
 │   │   ├── QueryIR.vi                      Assistant for object detection
 │   │   └── ServoController.vi              Servo motor behaviour
 │   │
 │   ├── Network\
-│   │   ├── CurrentServer.vi                Working server
+│   │   ├── CurrentServer.vi                Previous Working server
+│   │   ├── ModernNetworkStreamer.vi        One way data stream to client
 │   │   ├── TCP server.vi                   Prototype TCP server
-│   │   └── TCP server2.vi                  One-way TCP server
+│   │   └── TCP server2.vi                  Prototype One-way TCP server
 │   │
 │   ├── SCADA\
-│   │   └── SCADA.vi                        SCADA layout
+│   │   └── SCADA.vi                        Server-side SCADA layout
 │   │
 │   ├── StateMachine\
-│   │   └── SCADA.vi                        Server control panel
+│   │   ├── Globals.vi                      Server-side Global variables
+│   │   ├── Main_State_Machine.vi           State machine
+│   │   └── State machine(rough).vi         Previous state machine
 │   │
 │   ├── TypeDefs\
 │   │   ├── BeltControl.ctl                 Stores variables for conveyor belt
@@ -75,14 +87,14 @@ labview\
 │   │   └── System_State.ctl                Stores variables for state machine
 │   │
 │   ├── Vision\
-│   │   ├── camera system compressed.vi     Obsolete camera system
-│   │   └── Jay'sCameraSystem.vi            Current image capture system
+│   │   ├── camera system compressed.vi     Obsolete camera capture system
+│   │   └── Jay'sCameraSystem.vi            Current camera capture system
 │   │
-│   └── ObjectSorter.lvproj                 Used for easier use with Github
+│   └── ObjectSorter.lvproj                 Server Project file
 │
-├── RemoteClient\
+├── RemoteClient\                           Remote Client that connects to Sorting System
 │   ├── clientSCADA\
-│   │   └── SCADA.vi                        Client control panel
+│   │   └── SCADA.vi                        Client-side SCADA layout
 │   │
 │   ├── clientTCP\
 │   │   ├── GetCameraFeed.vi                Receives camera feed from server   
@@ -91,16 +103,16 @@ labview\
 │   ├── Variables\
 │   │   └── ComGlobalVars.vi                Stores variables for communication
 │   │
-│   └── RemoteClient.lvproj                 Used for easier use with Github
+│   └── RemoteClient.lvproj                 Client Project file
 │
-├── RemoteClientTesting\
+├── TestRemoteClient\                       Test Client
 │   ├── Variables\
 │   │   ├── TCPGlobalVars.vi                Stores variables for communication testing
 │   │   ├── TCPSharedVariables.vi           Stores variables for communication testing
 │   │   └── TCPSCADA.vi                     SCADA testing VI
 │   │
-│   ├── BetterRemoteClient.lvproj           Used for easier use with Github
+│   ├── TestRemoteClient.lvproj             Test Client Project file
 │   └── README.md
 │
-└── README.md           
+└── README.md                               This file    
 ```
