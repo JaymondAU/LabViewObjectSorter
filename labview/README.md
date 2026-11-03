@@ -36,8 +36,9 @@ Make these all documented and stuff
     | AIO 1 | Motor control input 2 (OUTPUT) |
     | COM | USB camera (Can be plugged into any COM port) |
 
-6. Create folder in C:\ directory named "Datalogger" and create .txt file called "Datalogger.txt"
 5. Run Application.exe
+
+   All data logger files are located in C:\TEMP\datalogger.txt
 
 # External Links
 
