@@ -13,13 +13,13 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name=".RemoteClient.UserState" Type="Folder" URL="../.RemoteClient.UserState">
+		<Item Name="clientNetworking" Type="Folder" URL="../clientNetworking">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="clientSCADA" Type="Folder" URL="../clientSCADA">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="clientTCP" Type="Folder" URL="../clientTCP">
+		<Item Name="Typedefs" Type="Folder" URL="../Typedefs">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="Variables" Type="Folder" URL="../Variables">
